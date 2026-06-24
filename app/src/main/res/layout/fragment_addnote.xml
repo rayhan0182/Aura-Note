@@ -1,100 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".view.AddnoteFragment">
+    android:background="#F8F1CC"
+    tools:context=".view.AddnoteFragment"
+    android:layout_marginBottom="@dimen/_10sdp">
 
-
+    <!-- Back Button -->
     <ImageView
         android:id="@+id/back_arrow"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_17sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:src="@drawable/outline_keyboard_arrow_left_24"
-        android:scaleType="centerCrop"
+        android:contentDescription="Back"
+        android:padding="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_10sdp"
-        />
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="@dimen/_20sdp"/>
 
+    <!-- Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/back_arrow"
-        app:layout_constraintTop_toTopOf="parent"
         android:text="Notes"
-        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
+        android:textSize="18sp"
         android:textColor="#C8B619"
-        android:layout_marginTop="@dimen/_8sdp"
-        />
+        app:layout_constraintStart_toEndOf="@id/back_arrow"
+        app:layout_constraintTop_toTopOf="@id/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow"
+        android:layout_marginStart="8dp"/>
 
-
+    <!-- Undo -->
     <ImageView
         android:id="@+id/curved_array_left"
-        android:layout_width="@dimen/_16sdp"
-        android:layout_height="@dimen/_16sdp"
+        android:layout_width="@dimen/_19sdp"
+        android:layout_height="@dimen/_19sdp"
         android:src="@drawable/curved_thin_arrow_left_icon"
-        android:scaleType="centerCrop"
+        android:contentDescription="Undo"
         app:layout_constraintStart_toEndOf="@id/title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_10sdp"
-        />
+        app:layout_constraintTop_toTopOf="@id/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow"
+        android:layout_marginStart="@dimen/_70sdp"/>
+
+    <!-- Redo -->
 
     <ImageView
         android:id="@+id/curved_array_right"
-        android:layout_width="@dimen/_16sdp"
-        android:layout_height="@dimen/_16sdp"
+        android:layout_width="@dimen/_19sdp"
+        android:layout_height="@dimen/_19sdp"
         android:src="@drawable/curved_thin_arrow_right_icon"
-        android:scaleType="centerCrop"
+        android:contentDescription="Undo"
         app:layout_constraintStart_toEndOf="@id/curved_array_left"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-
-        />
+        app:layout_constraintTop_toTopOf="@id/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow"
+        android:layout_marginStart="@dimen/_5sdp"/>
 
 
+    <!-- Done -->
     <TextView
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/curved_array_right"
-        app:layout_constraintTop_toTopOf="parent"
         android:text="Done"
-        android:textSize="@dimen/_14ssp"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:textSize="@dimen/_16ssp"
         android:textColor="#C8B619"
-        android:layout_marginLeft="@dimen/_25sdp"
-        />
+        app:layout_constraintStart_toEndOf="@id/curved_array_right"
+        app:layout_constraintTop_toTopOf="@id/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow"
+        android:layout_marginStart="@dimen/_35sdp"/>
 
-
+    <!-- Note Writing Area -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/writing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:boxBackgroundMode="none"
         app:layout_constraintTop_toBottomOf="@id/back_arrow"
-        android:layout_marginTop="@dimen/_4sdp"
-        app:boxBackgroundMode="none">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/writing_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:textSize="@dimen/_16ssp"/>
+            android:layout_height="match_parent"
+            android:gravity="top|start"
+            android:background="@android:color/transparent"
+            android:inputType="textMultiLine|textCapSentences"
+            android:textSize="16sp"
+            android:minLines="20"
+            android:scrollbars="vertical"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
