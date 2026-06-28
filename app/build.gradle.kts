@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -55,6 +56,11 @@ dependencies {
     implementation("com.intuit.ssp:ssp-android:1.1.1")
 
     implementation("com.intuit.sdp:sdp-android:1.1.1")
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
 
 
