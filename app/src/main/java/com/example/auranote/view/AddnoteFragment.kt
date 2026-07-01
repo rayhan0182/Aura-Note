@@ -23,13 +23,11 @@ class AddnoteFragment : Basefragment<FragmentAddnoteBinding>(
 
     private fun savenotedata() {
 
-
         binding.apply {
 
             save.setOnClickListener {
 
-
-               
+            val user_note = writingText.text.toString()
 
 
 
@@ -37,9 +35,5 @@ class AddnoteFragment : Basefragment<FragmentAddnoteBinding>(
 
         }
 
-
-
     }
-
-
 }

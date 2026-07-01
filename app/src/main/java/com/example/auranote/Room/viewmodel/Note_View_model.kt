@@ -15,7 +15,7 @@ class Note_View_model(
 
         viewModelScope.launch {
 
-            repository.insert_data(note)
+           // repository.insert_data(note)
 
         }
 
