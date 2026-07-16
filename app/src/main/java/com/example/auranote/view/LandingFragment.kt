@@ -6,25 +6,28 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.auranote.R
-import com.example.auranote.basefrag.Basefragment
 import com.example.auranote.databinding.FragmentLandingBinding
 
-class LandingFragment : Basefragment<FragmentLandingBinding>(
 
-    FragmentLandingBinding::inflate
+class LandingFragment : Fragment()  {
+     lateinit var binding: FragmentLandingBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
-) {
-    override fun clickevent() {
+        binding = FragmentLandingBinding.inflate(layoutInflater)
 
         binding.add.setOnClickListener {
+
 
             findNavController().navigate(R.id.action_landingFragment_to_addnoteFragment)
 
         }
 
 
-
+        return binding.root
     }
-
 
 }

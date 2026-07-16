@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#000000"
+    android:background="#0D0D0D"
     tools:context=".view.LandingFragment">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:fontFamily="@font/averia_serif_libre_bold_italic"
         android:text="Write_"
         android:textColor="#F9F9F9"
@@ -21,7 +21,8 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <EditText
         android:id="@+id/search"
@@ -31,7 +32,7 @@
         android:inputType="text"
         android:textColor="#ffffff"
         android:background="@drawable/box_corner_shape"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_17sdp"
         android:layout_marginHorizontal="@dimen/_21sdp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,8 +74,6 @@
         android:layout_marginLeft="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_10sdp"
         tools:listitem="@layout/notes_items"
-
-
     />
 
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F1CC"
+    android:background="#F7F1DA"
     tools:context=".view.AddnoteFragment"
     android:layout_marginBottom="@dimen/_10sdp">
 

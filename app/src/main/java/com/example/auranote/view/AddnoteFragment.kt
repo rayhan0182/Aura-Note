@@ -5,35 +5,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.auranote.R
-import com.example.auranote.basefrag.Basefragment
-import com.example.auranote.database.NoteDatabase
+import androidx.room.Room
 import com.example.auranote.databinding.FragmentAddnoteBinding
+import com.example.auranote.room.Appdatabase
 
-class AddnoteFragment : Basefragment<FragmentAddnoteBinding>(
 
-    FragmentAddnoteBinding::inflate
+class AddnoteFragment : Fragment() {
 
-) {
-    override fun clickevent() {
+    private lateinit var binding: FragmentAddnoteBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
-        savenotedata()
 
+
+        binding = FragmentAddnoteBinding.inflate(layoutInflater)
+
+        return binding.root
     }
 
-    private fun savenotedata() {
-
-        binding.apply {
-
-            save.setOnClickListener {
-
-            val user_note = writingText.text.toString()
-
-
-
-            }
-
-        }
-
-    }
 }
+
+
+
+
+
+
+
+
